@@ -3,10 +3,22 @@
 # ------ funciones -----
 
 def apilar_cajas(pila_cajas: list):
-    pass
+    # Se pide el nombre de la caja y se agrega al final de la lista, como si se pusiera encima de las otras cajas
+    caja = input("Ingrese el identificador de la caja (ej. Caja-101): ").strip()
+    if caja == "":
+        print("[!] Error: El identificador de la caja no puede estar vacío.")
+        return
+    pila_cajas.append(caja)
+    print(f"-> Caja [{caja}] apilada con éxito.")
 
 def retirar_caja(pila_cajas: list):
-    pass
+    # Si no hay ninguna caja, se muestra un aviso y no se intenta sacar nada, así el programa no se cierra con un error
+    if len(pila_cajas) == 0:
+        print("[!] Error: El almacén está vacío (no hay cajas que retirar).")
+        return
+    # pop() saca la última caja que se agregó, porque en una pila siempre sale primero la que entró último
+    caja = pila_cajas.pop()
+    print(f"-> Caja [{caja}] retirada de la cima.")
 
 def formar_camion(cola_camiones: list):
     pass
