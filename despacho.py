@@ -39,9 +39,13 @@ def salida_camion(cola_camiones: list):
 
 
 def estado(pila_cajas: list, cola_camiones: list):
-    print("\nESTADO ACTUAL:")
-    print(f"- Cajas apiladas (Cima -> Base): {list(reversed(pila_cajas))}")
-    print(f"- Fila de camiones (Frente -> Fin): {list(cola_camiones)}")
+    print("--------------------------------------------------") 
+    print("ESTADO ACTUAL DEL SISTEMA") 
+    print("--------------------------------------------------") 
+
+    print(f"- Cajas apiladas (Cima -> Base) : {list(reversed(pila_cajas))}") 
+    print(f"- Fila de camiones (Frente -> Fin): {cola_camiones}") 
+    print("--------------------------------------------------")
 
 # ----- main -----
 
@@ -51,13 +55,16 @@ def main():
     cola_camiones = []
 
     while True:
-        print("--- Sistema Logística CLI ---")
-        print("1. Apilar cajas")
-        print("2. Retirar caja")
-        print("3. Formar camión")
-        print("4. Salida de camión")
-        print("5. Estado")
-        print("6. Salir")
+        print("==================================================") 
+        print("SISTEMA DE DESPACHO Y ALMACÉN") 
+        print("==================================================") 
+        print("1. [PILA] Apilar caja (push)") 
+        print("2. [PILA] Retirar caja de la cima (pop)") 
+        print("3. [COLA] Llega camión a la fila") 
+        print("4. [COLA] Despachar primer camión") 
+        print("5. Ver estado del almacén y camion") 
+        print("6. Salir del programa") 
+        print("---------------------------------------------------")
 
         opcion = input("\nSeleccione una opción: ")
 
