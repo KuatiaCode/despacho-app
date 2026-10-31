@@ -20,20 +20,43 @@ def retirar_caja(pila_cajas: list):
     caja = pila_cajas.pop()
     print(f"-> Caja [{caja}] retirada de la cima.")
 
+
 def formar_camion(cola_camiones: list):
+<<<<<<< HEAD
     camion = input("Ingrese la placa o identificador del vehículo (ej. Camión-Alfa): ").strip()
     if camion == "":
         print("[!] Error: El identificador del vehículo no puede estar vacío.")
         return
+=======
+    # Se solicita la placa o identificador del camión y se eliminan los espacios innecesarios
+    camion = input("Ingrese la placa o identificador del camión: ").strip()
+
+    # Si el usuario no ingresa ningún identificador, se muestra un aviso y no se agrega a la cola
+    if camion == "":
+        print("[!] Error: El identificador no puede estar vacío.")
+        return
+    
+  # append() agrega el camión al final de la cola, respetando el orden de llegada
+>>>>>>> 762e51c0144eff89180e7f77ef71aaf49561a0a7
     cola_camiones.append(camion)
     print(f"-> Camión [{camion}] formado en la fila.")
 
 def salida_camion(cola_camiones: list):
+<<<<<<< HEAD
     if len(cola_camiones) == 0:
         print("[!] Error: No hay camiones esperando turno.")
         return
     camion = cola_camiones.pop(0)
     print(f"-> Camión [{camion}] despachado.")
+=======
+    # Si no hay ningún camión, se muestra un aviso y no se intenta retirar nada
+    if len(cola_camiones) == 0:
+        print("[!] Error: No hay camiones en la fila para salir.")
+        return
+     # pop(0) retira el primer camión que ingresó, porque en una cola siempre sale primero el que llegó primero
+    camion = cola_camiones.pop(0)
+    print(f"-> Camión [{camion}] saliendo de la fila.")
+>>>>>>> 762e51c0144eff89180e7f77ef71aaf49561a0a7
 
 def estado(pila_cajas: list, cola_camiones: list):
     print("\nESTADO ACTUAL:")
@@ -81,7 +104,11 @@ def main():
             print("\nError: Opción inválida. Por favor, seleccione una opción válida")
 
     if __name__ == "__main__":
+<<<<<<< HEAD
         main() 
 
 
   
+=======
+        main()
+>>>>>>> 762e51c0144eff89180e7f77ef71aaf49561a0a7
