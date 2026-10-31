@@ -70,10 +70,4 @@ def main():
             print("\nError: Opción inválida. Por favor, seleccione una opción válida")
 
     if __name__ == "__main__":
-        main() 
-def estado(pila_cajas: list, cola_camiones: list):
-    print("\nESTADO ACTUAL:")
-    print(f"- Cajas apiladas (Cima -> Base): {list(reversed(pila_cajas))}")
-    print(f"- Fila de camiones (Frente -> Fin): {list(cola_camiones)}")
-
-  
+        main()
