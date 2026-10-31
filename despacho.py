@@ -20,11 +20,28 @@ def retirar_caja(pila_cajas: list):
     caja = pila_cajas.pop()
     print(f"-> Caja [{caja}] retirada de la cima.")
 
+
 def formar_camion(cola_camiones: list):
-    pass
+    # Se solicita la placa o identificador del camión y se eliminan los espacios innecesarios
+    camion = input("Ingrese la placa o identificador del camión: ").strip()
+
+    # Si el usuario no ingresa ningún identificador, se muestra un aviso y no se agrega a la cola
+    if camion == "":
+        print("[!] Error: El identificador no puede estar vacío.")
+        return
+    
+  # append() agrega el camión al final de la cola, respetando el orden de llegada
+    cola_camiones.append(camion)
+    print(f"-> Camión [{camion}] formado en la fila.")
 
 def salida_camion(cola_camiones: list):
-    pass
+    # Si no hay ningún camión, se muestra un aviso y no se intenta retirar nada
+    if len(cola_camiones) == 0:
+        print("[!] Error: No hay camiones en la fila para salir.")
+        return
+     # pop(0) retira el primer camión que ingresó, porque en una cola siempre sale primero el que llegó primero
+    camion = cola_camiones.pop(0)
+    print(f"-> Camión [{camion}] saliendo de la fila.")
 
 def estado(pila_cajas: list, cola_camiones: list):
     pass
