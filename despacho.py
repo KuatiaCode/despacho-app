@@ -21,13 +21,24 @@ def retirar_caja(pila_cajas: list):
     print(f"-> Caja [{caja}] retirada de la cima.")
 
 def formar_camion(cola_camiones: list):
-    pass
+    camion = input("Ingrese la placa o identificador del vehículo (ej. Camión-Alfa): ").strip()
+    if camion == "":
+        print("[!] Error: El identificador del vehículo no puede estar vacío.")
+        return
+    cola_camiones.append(camion)
+    print(f"-> Camión [{camion}] formado en la fila.")
 
 def salida_camion(cola_camiones: list):
-    pass
+    if len(cola_camiones) == 0:
+        print("[!] Error: No hay camiones esperando turno.")
+        return
+    camion = cola_camiones.pop(0)
+    print(f"-> Camión [{camion}] despachado.")
 
 def estado(pila_cajas: list, cola_camiones: list):
-    pass
+    print("\nESTADO ACTUAL:")
+    print(f"- Cajas apiladas (Cima -> Base): {list(reversed(pila_cajas))}")
+    print(f"- Fila de camiones (Frente -> Fin): {list(cola_camiones)}")
 
 # ----- main -----
 
@@ -71,9 +82,6 @@ def main():
 
     if __name__ == "__main__":
         main() 
-def estado(pila_cajas: list, cola_camiones: list):
-    print("\nESTADO ACTUAL:")
-    print(f"- Cajas apiladas (Cima -> Base): {list(reversed(pila_cajas))}")
-    print(f"- Fila de camiones (Frente -> Fin): {list(cola_camiones)}")
+
 
   
